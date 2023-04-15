@@ -24,15 +24,15 @@ export default function About() {
         <span className="tracking-widest text-xs">About</span>
       </div>
       <div>
-        <span>Every great design begin with an even <span className={theme.currenttheme}>better story</span></span>
-        <span>
+        <p className="experience_text text-white">Every great design begin with an even <span className={theme.currenttheme[0]}>better story</span></p>
+        <p className="text-slate-300 font-light text-[1.2rem] w-[60%]">
           Since beginning my journey as a freelance designer nearly 8 years ago,
           I've done remote work for agencies, consulted for startups, and
           collaborated with talented people to create digital products for both
           business and consumer use. I'm quietly confident, naturally curious,
           and perpetually working on improving my chopsone design problem at a
           time.
-        </span>
+        </p>
       </div>
     </div>
   );

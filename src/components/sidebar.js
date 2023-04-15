@@ -3,12 +3,13 @@ import ThemeContext from "./context";
 export default function () {
   const theme = useContext(ThemeContext);
   const textColors = theme.textColors
+  const bgColors = theme.bgColors
   const [sidebar, setSidebar] = useState();
   return (
-    <div className="border-slate-100 border-solid border z-10 rounded-3xl p-5 inline-flex items-center flex-col fixed translate-y-[-50%] top-[50%]">
+    <div className="border-slate-100 border-solid border z-10 rounded-3xl p-5 inline-flex items-center flex-col fixed translate-y-[-50%] top-[50%] left-4  ">
       <button
         onClick={() => setSidebar(!sidebar)}
-        className="absolute top-0 left-0 App-logo" 
+        className="absolute top-[-4px] left-[-4px] bg-gray-800 p-2 rounded" 
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +17,7 @@ export default function () {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 App-logo text-white"
         >
           <path
             strokeLinecap="round"
@@ -51,15 +52,15 @@ export default function () {
           <li>SOCIAL</li>
         </ul>
       </div>
-      <button>HIRE US</button>
+      <button className={` rounded-[40px] ${theme.currenttheme[1]}  w-[100%] h-[50px]`}>HIRE US</button>
       {sidebar && (
         <div className="fixed top-0 right-0 border z-10 bg-black text-white">
           <ul className="cursor-pointer">
-            <li onClick={() => theme.setTheme(textColors[2])}>RED</li>
-            <li onClick={() => theme.setTheme(textColors[0])}>GREEN</li>
-            <li onClick={() => theme.setTheme(textColors[1])}>SKY</li>
-            <li onClick={() => theme.setTheme(textColors[3])}>YELLOW</li>
-            <li onClick={() => theme.setTheme(textColors[4])}>PINK</li>{" "}
+            <li onClick={() => theme.setTheme([textColors[2],bgColors[2]])}>RED</li>
+            <li onClick={() => theme.setTheme([textColors[0],bgColors[0]])}>GREEN</li>
+            <li onClick={() => theme.setTheme([textColors[1],bgColors[1]])}>SKY</li>
+            <li onClick={() => theme.setTheme([textColors[3],bgColors[3]])}>YELLOW</li>
+            <li onClick={() => theme.setTheme([textColors[4],bgColors[4]])}>PINK</li>{" "}
           </ul>
         </div>
       )}

@@ -24,11 +24,11 @@ export default function Skills() {
         <span className="tracking-widest text-xs">MY SKILLS</span>
       </div>
       <div>
-        <p className="experience_text text-white">My <span className={theme.currenttheme}>Advantages</span></p>
+        <p className="experience_text text-white">My <span className={theme.currenttheme[0]}>Advantages</span></p>
         <div className="text-center inline-block">
             <div className=" text-white  inline-flex  items-center flex-col rounded-[84px] border-2 border-gray-500 p-9 gap-4 ">
             <FaReact style={{display:"inline", fontSize:'5rem'}}/>
-                <span className={`text-4xl ${theme.currenttheme}`}>92%</span>
+                <span className={`text-4xl ${theme.currenttheme[0]}`}>92%</span>
             </div>
             <p>Figma</p>
         </div>

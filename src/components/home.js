@@ -1,8 +1,8 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import "./content.css";
 import ThemeContext from "./context";
 export default function Home() {
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
   return (
     <div className="p-32">
       <div className="border-solid mb-8 rounded-2xl border-white border inline-flex items-center text-white p-1 w-32 place-content-center gap-1">
@@ -23,25 +23,39 @@ export default function Home() {
 
         <span className="tracking-widest text-xs">INTRODUCE</span>
       </div>
-      <div>
+      <div className="mb-5">
         <span className="about_text text-white">
-          Say Hi from <span className={theme.currenttheme}>Drake</span>, Webflow
+          Say Hi from <span className={theme.currenttheme[0]}>Drake</span>, Webflow
           Designer and Developer
         </span>
       </div>
-      <span>
-        I design and code beautifully simple things and i love what i do. Just
-        simple like that!
-      </span>
-      <div>MY PROJECTS</div>
-      <div>
-        <div>
-          <span className={theme.currenttheme}>10+</span>
-          <span>YEARS OF EXPERIENCE</span>
+      <p className="text-slate-300 font-light text-[1.2rem] w-[60%] mb-4">
+        I design and code beautifully simple things and i love what i do.
+        <br /> Just simple like that!
+      </p>
+      <div className="App-logo text-white relative left-[80%] border inline-flex items-center place-content-center rounded-full w-[150px] h-[150px]">
+        <img src="/images/round-text.png" className="w-[90%]" />
+      </div>
+      <div className="mt-5">
+        <div className="inline-block p-4 mr-3">
+          <p className={`${theme.currenttheme[0]} text-7xl font-light mb-3`}>
+            10+
+          </p>
+          <br />
+          <span className="text-slate-300 font-light text-base">
+            YEARS OF
+            <br /> EXPERIENCE
+          </span>
         </div>
-        <div>
-          <span className={theme.currenttheme}>130+</span>
-          <span>PROJECTS COMPLETED ON 15 COUNTRIES</span>
+        <div className="inline-block p-4">
+          <p className={`${theme.currenttheme[0]} text-7xl font-light mb-3`}>
+            130+
+          </p>
+          <br />
+          <span className="text-slate-300 font-light text-base">
+            PROJECTS COMPLETED
+            <br /> ON 15 COUNTRIES
+          </span>
         </div>
       </div>
     </div>

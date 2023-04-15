@@ -1,7 +1,7 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import ThemeContext from "./context";
 export default function Portfolio() {
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
   return (
     <div className="p-32">
       <div className="border-solid mb-8 rounded-2xl border-white border inline-flex items-center text-white p-1 w-32 place-content-center gap-1">
@@ -23,9 +23,17 @@ export default function Portfolio() {
         <span className="tracking-widest text-xs">PORTFOLIO</span>
       </div>
       <div>
-        <span>Featured <span className={theme.currenttheme}>Projects</span></span>
+        <p className="experience_text text-white">
+          Featured <span className={theme.currenttheme[0]}>Projects</span>
+        </p>
       </div>
-      <div>PROJECT ONE</div>
+      <div>
+        <embed
+          src="https://carrentgautam.000webhostapp.com/login.php"
+          style={{ width: "100%", height: " 480px", borderRadius: "14px" }}
+        />
+        <p className="text-white font-bold text-2xl underline">CAR RENTAL WEBSITE</p>
+      </div>
     </div>
   );
 }

@@ -25,7 +25,7 @@ export default function Services() {
         <span className="tracking-widest text-xs">SERVICES</span>
       </div>
       <div>
-        <p className="experience_text text-white">My <span className={theme.currenttheme}>Specializations</span></p>
+        <p className="experience_text text-white">My <span className={theme.currenttheme[0]}>Specializations</span></p>
         <div className="border p-7 text-white rounded-2xl">
           <div className="flex justify-between">
             <div className="mb-6">
@@ -41,7 +41,7 @@ export default function Services() {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className={`w-9 h-9 ${theme.currenttheme}`}
+                className={`w-9 h-9 ${theme.currenttheme[0]}`}
               >
                 <path
                   strokeLinecap="round"

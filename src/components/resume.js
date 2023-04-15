@@ -24,9 +24,9 @@ export default function Resume() {
         <span className="tracking-widest text-xs">Resume</span>
       </div>
       <div>
-        <span className="experience_text text-white">
-          Education & <span className={theme.currenttheme}>Experience</span>
-        </span>
+        <p className="experience_text text-white">
+          Education & <span className={theme.currenttheme[0]}>Experience</span>
+        </p>
         <ul className="text-white font-light ">
           <li className="pb-3 list_item">
             <span className="pointer"></span>
