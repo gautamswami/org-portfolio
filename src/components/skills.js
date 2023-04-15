@@ -1,6 +1,8 @@
-import React from "react";
-
+import React,{useContext} from "react";
+import { FaReact } from 'react-icons/fa'
+import ThemeContext from "./context";
 export default function Skills() {
+  const theme = useContext(ThemeContext)
   return (
     <div className="p-32">
       <div className="border-solid mb-8 rounded-2xl border-white border inline-flex items-center text-white p-1 w-32 place-content-center gap-1">
@@ -22,28 +24,15 @@ export default function Skills() {
         <span className="tracking-widest text-xs">MY SKILLS</span>
       </div>
       <div>
-        <p>My Advantages</p>
-        <div>
-            <div>
-                <img />
-                <span>92%</span>
+        <p className="experience_text text-white">My <span className={theme.currenttheme}>Advantages</span></p>
+        <div className="text-center inline-block">
+            <div className=" text-white  inline-flex  items-center flex-col rounded-[84px] border-2 border-gray-500 p-9 gap-4 ">
+            <FaReact style={{display:"inline", fontSize:'5rem'}}/>
+                <span className={`text-4xl ${theme.currenttheme}`}>92%</span>
             </div>
-            <span>Figma</span>
+            <p>Figma</p>
         </div>
-        <div>
-            <div>
-                <img />
-                <span>85%</span>
-            </div>
-            <span>Framer</span>
-        </div>
-        <div>
-            <div>
-                <img />
-                <span>80%</span>
-            </div>
-            <span>Webflow</span>
-        </div>
+      
         
       </div>
     </div>

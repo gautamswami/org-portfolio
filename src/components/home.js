@@ -1,6 +1,8 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./content.css";
+import ThemeContext from "./context";
 export default function Home() {
+  const theme = useContext(ThemeContext)
   return (
     <div className="p-32">
       <div className="border-solid mb-8 rounded-2xl border-white border inline-flex items-center text-white p-1 w-32 place-content-center gap-1">
@@ -23,7 +25,7 @@ export default function Home() {
       </div>
       <div>
         <span className="about_text text-white">
-          Say Hi from <span className="text-sky-500">Drake</span>, Webflow
+          Say Hi from <span className={theme.currenttheme}>Drake</span>, Webflow
           Designer and Developer
         </span>
       </div>
@@ -34,11 +36,11 @@ export default function Home() {
       <div>MY PROJECTS</div>
       <div>
         <div>
-          <span>10+</span>
+          <span className={theme.currenttheme}>10+</span>
           <span>YEARS OF EXPERIENCE</span>
         </div>
         <div>
-          <span>130+</span>
+          <span className={theme.currenttheme}>130+</span>
           <span>PROJECTS COMPLETED ON 15 COUNTRIES</span>
         </div>
       </div>

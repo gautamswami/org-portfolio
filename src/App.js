@@ -1,15 +1,27 @@
-import './App.css';
-import Content from './components/content';
-import Menu from './components/menu';
-import Sidebar from './components/sidebar';
+import "./App.css";
+import Content from "./components/content";
+import Menu from "./components/menu";
+import Sidebar from "./components/sidebar";
+import { useState } from "react";
+import ThemeContext from "./components/context";
 
 function App() {
+  const textColors = [
+    "text-green-500",
+    "text-sky-500",
+    "text-rose-500",
+    "text-yellow-500",
+    "text-pink-500",
+  ];
+  const [currenttheme, setTheme] = useState(textColors[0]);
   return (
-    <>
-    <Sidebar/>
-    <Content/>
-    <Menu/>
-    </>
+    <div className="Application">
+      <ThemeContext.Provider value={{ currenttheme, setTheme, textColors }}>
+        <Sidebar />
+        <Content />
+        <Menu />
+      </ThemeContext.Provider>
+    </div>
   );
 }
 

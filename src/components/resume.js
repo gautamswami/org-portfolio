@@ -1,6 +1,8 @@
-import React from "react";
-import "./content.css";
+import React,{useContext} from "react";
+import ThemeContext from "./context";
+
 export default function Resume() {
+  const theme = useContext(ThemeContext)
   return (
     <div className="p-32">
       <div className="border-solid mb-8 rounded-2xl border-white border inline-flex items-center text-white p-1 w-32 place-content-center gap-1">
@@ -23,12 +25,12 @@ export default function Resume() {
       </div>
       <div>
         <span className="experience_text text-white">
-          Education & <span className="text-sky-500">Experience</span>
+          Education & <span className={theme.currenttheme}>Experience</span>
         </span>
         <ul className="text-white font-light ">
           <li className="pb-3 list_item">
             <span className="pointer"></span>
-            <p className="text-base mb-5">2020-Present</p>
+            <p className={`text-base mb-5 cursor-pointer`}>2020-Present</p>
             <p className="text-2xl">Framer Designer & Developer</p>
             <p className="text-sm mb-3">Brunodee Agency</p>
             <p className="text-2xl">Framer Designer & Developer</p>

@@ -2,12 +2,15 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: #191919;
 }
 
+.Application{
+  background-color: #191919;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 2s linear;
+
   }
 }
 

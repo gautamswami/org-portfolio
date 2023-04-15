@@ -1,6 +1,8 @@
-import React from "react";
+import React,{useContext} from "react";
+import ThemeContext from "./context";
 
 export default function About() {
+  const theme = useContext(ThemeContext)
   return (
     <div className="p-32">
       <div className="border-solid mb-8 rounded-2xl border-white border inline-flex items-center text-white p-1 w-32 place-content-center gap-1">
@@ -22,7 +24,7 @@ export default function About() {
         <span className="tracking-widest text-xs">About</span>
       </div>
       <div>
-        <span>Every great design begin with an even better story</span>
+        <span>Every great design begin with an even <span className={theme.currenttheme}>better story</span></span>
         <span>
           Since beginning my journey as a freelance designer nearly 8 years ago,
           I've done remote work for agencies, consulted for startups, and

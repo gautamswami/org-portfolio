@@ -1,6 +1,7 @@
-import React from "react";
-
+import React,{useContext} from "react";
+import ThemeContext from "./context";
 export default function Portfolio() {
+  const theme = useContext(ThemeContext)
   return (
     <div className="p-32">
       <div className="border-solid mb-8 rounded-2xl border-white border inline-flex items-center text-white p-1 w-32 place-content-center gap-1">
@@ -22,7 +23,7 @@ export default function Portfolio() {
         <span className="tracking-widest text-xs">PORTFOLIO</span>
       </div>
       <div>
-        <span>Featured Projects</span>
+        <span>Featured <span className={theme.currenttheme}>Projects</span></span>
       </div>
       <div>PROJECT ONE</div>
     </div>
