@@ -5,7 +5,17 @@
 }
 
 .Application{
-  background-color: #191919;
+  /* background-color:#000000d1; */
+  background-color: #000000e0;
+}
+.body-overlay{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

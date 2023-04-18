@@ -1,7 +1,10 @@
 import React,{useContext} from "react";
 import ThemeContext from "./context";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
-export default function Resume() {
+export default function Resume({pagedata}) {
   const theme = useContext(ThemeContext)
   return (
     <div className="p-32">
@@ -24,26 +27,28 @@ export default function Resume() {
         <span className="tracking-widest text-xs">Resume</span>
       </div>
       <div>
-        <p className="experience_text text-white">
-          Education & <span className={theme.currenttheme[0]}>Experience</span>
+        <p className="experience_text text-white" data-aos="fade-up">
+          {pagedata?.resumeheadingtext} <span className={theme.currenttheme[0]}>{pagedata?.resumeheadingbold}</span>
         </p>
         <ul className="text-white font-light ">
-          <li className="pb-3 list_item">
-            <span className="pointer"></span>
-            <p className={`text-base mb-5 cursor-pointer`}>2020-Present</p>
-            <p className="text-2xl">Framer Designer & Developer</p>
-            <p className="text-sm mb-3">Brunodee Agency</p>
-            <p className="text-2xl">Framer Designer & Developer</p>
-            <p className="text-sm">Brunodee Agency</p>
-          </li>
-          <li className="pb-3 list_item">
-            <span className="pointer"></span>
-            <p className="text-base mb-3">2013-2019</p>
-            <p className="text-2xl">Webflow Developer & Co-Founder</p>
-            <p className="text-sm mb-3">Designflow Studio</p>
-            <p className="text-2xl">Web Designer</p>
-            <p className="text-sm">Freelance</p>
-          </li>
+          {pagedata?.resume?.map((data)=>{
+            return(
+              <li className="pb-3 list_item" data-aos="fade-left" data-aos-duration="800">
+              <span className="pointer"></span>
+              <p className="text-base mb-5 cursor-pointer">{data.startyear}-{data.endyear}</p>
+              <p className="text-2xl mb-3">{data.heading}</p>
+              <p className="text-sm mb-3">{data.detail}</p>
+              {data.points.map((value)=>{
+                return(
+                  <li className="text-xs mb-3">
+                  {value}
+                  </li>
+                )
+              })}
+            </li>
+            )
+          })}
+        
         </ul>
       </div>
     </div>

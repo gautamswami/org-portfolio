@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import ThemeContext from "./context";
-export default function Portfolio() {
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
+export default function Portfolio({ pagedata }) {
   const theme = useContext(ThemeContext);
   return (
     <div className="p-32">
@@ -24,16 +28,33 @@ export default function Portfolio() {
       </div>
       <div>
         <p className="experience_text text-white">
-          Featured <span className={theme.currenttheme[0]}>Projects</span>
+          {pagedata?.portfolioheadingtext}{" "}
+          <span className={theme.currenttheme[0]}>
+            {pagedata?.portfolioheadingbold}
+          </span>
         </p>
       </div>
-      <div>
-        <embed
-          src="https://carrentgautam.000webhostapp.com/login.php"
-          style={{ width: "100%", height: " 480px", borderRadius: "14px" }}
-        />
-        <p className="text-white font-bold text-2xl underline">CAR RENTAL WEBSITE</p>
-      </div>
+      {pagedata?.portfolios?.map((values) => {
+        return (
+          <div data-aos="fade-up" data-aos-duration="1600">
+            {values?.image ? (
+              <img src={values.image} />
+            ) : (
+              <embed
+                src={values?.link}
+                style={{
+                  width: "100%",
+                  height: " 480px",
+                  borderRadius: "14px",
+                }}
+              />
+            )}
+            <a href={values.link} target="blank" className="text-white font-bold text-2xl underline">
+              {values?.title}
+            </a>
+          </div>
+        );
+      })}
     </div>
   );
 }
