@@ -52,7 +52,7 @@ export default function ({ handleVideo, pagedata }) {
         <div className="text-white mb-4 text-center">
           <p className="text-3xl font-semibold mb-4 mt-2">Software Product Studio</p>
           <p className="text-xl font-semibold mb-6 mt-2">DESIGN AND DEVELOPMENT</p>
-          <p className="text-sm font-semibold mb-4 ">email@org.com</p>
+          <p className="text-sm font-semibold mb-4 ">softwareproductstudio@gmail.com</p>
         </div>
         
           <ul className="flex gap-3 mb-5">
