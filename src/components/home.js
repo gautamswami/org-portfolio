@@ -3,8 +3,10 @@ import "./content.css";
 import ThemeContext from "./context";
 export default function Home({ pagedata }) {
   const theme = useContext(ThemeContext);
+  const refs = theme.refs;
+
   return (
-    <div className="p-32">
+    <div className="p-32" ref={refs.homeref}>
       <div className="border-solid mb-8 rounded-2xl border-white border inline-flex items-center text-white p-1 w-32 place-content-center gap-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"

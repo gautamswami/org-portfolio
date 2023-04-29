@@ -2,7 +2,7 @@ import "./App.css";
 import Content from "./components/content";
 import Menu from "./components/menu";
 import Sidebar from "./components/sidebar";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import ThemeContext from "./components/context";
 
 export const pagedata = {
@@ -123,6 +123,22 @@ function App() {
     "bg-yellow-500",
     "bg-pink-500",
   ];
+  const homeref = useRef()
+  const aboutref = useRef()
+  const resumeref = useRef()
+  const serviceref = useRef()
+  const skillref = useRef()
+  const portfolioref = useRef()
+
+  let refs = {
+    homeref:homeref,
+    aboutref:aboutref,
+    resumeref:resumeref,
+    serviceref:serviceref,
+    skillref:skillref,
+    portfolioref:portfolioref
+
+  }
   const [currenttheme, setTheme] = useState([textColors[0], bgColors[0]]);
   const [currentVideo, setVideo] = useState("");
   const handleVideo = (data) => {
@@ -132,7 +148,7 @@ function App() {
     <div className="Application">
       <video className="body-overlay" autoPlay muted loop src={currentVideo} />
       <ThemeContext.Provider
-        value={{ currenttheme, setTheme, textColors, bgColors }}
+        value={{ currenttheme, setTheme, textColors, bgColors ,refs}}
       >
         <Sidebar handleVideo={handleVideo} pagedata={pagedata}/>
         <Content pagedata={pagedata} />
